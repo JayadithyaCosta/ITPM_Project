@@ -6,17 +6,13 @@ import java.io.FileNotFoundException;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import com.classes.Exam;
-import com.itextpdf.text.BaseColor;
+import com.classes.Results;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
-import com.itextpdf.text.Font;
-import com.itextpdf.text.Font.FontFamily;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
@@ -34,7 +30,7 @@ public static void generatePDF(String examid) {
 		try {
 			
 			//create a file name
-			String file_name="C:\\Users\\ASUS\\Desktop\\ExamDetails\\exam.pdf";
+			String file_name="C:\\Users\\jayad\\Documents\\exam.pdf";
 			
 			//create a document object
 			Document document=new Document();
@@ -44,10 +40,10 @@ public static void generatePDF(String examid) {
 			document.open();
 			
 			//add an image to the report
-			 Image image = Image.getInstance("C:\\Users\\ASUS\\Desktop\\ExamDetails\\logo.jpeg");
+			 Image image = Image.getInstance("D:\\Sliit\\ITPM\\project\\kanampellajuniorschool\\WebContent\\css\\Logo.png");
 	          image.setAlignment(Image.MIDDLE);
 		      image.setBorder(10);
-		      image.setScaleToFitHeight(true);
+		      //image.setScaleToFitHeight(true);
 		        document.add(image);
 					      
 		        //add a paragraph to the report
@@ -60,7 +56,7 @@ public static void generatePDF(String examid) {
 				p2.add("\n");
 				p2.add("\n");
 
-			List <Exam> res=ExamsDBUtil.examDetails();
+			List <Results> res=ResultsUtil.getStudentResults(examid);
 			
 			
 			//add table
@@ -82,11 +78,11 @@ public static void generatePDF(String examid) {
 			
 			table.setHeaderRows(1);
 			
-			for(Exam r1:res) {
-				table.addCell(r1.getExamID());
-				table.addCell(Integer.toString(r1.getTotal_Question()));
-				table.addCell(Integer.toString(r1.getMarks()));
-				table.addCell(r1.getSubjectID());
+			for(Results r1:res) {
+				table.addCell(r1.getStid());
+				table.addCell(r1.getSubject());
+				table.addCell(r1.getStatus());
+				table.addCell(Double.toString(r1.getTotal()));
 				
 				
 				

@@ -38,7 +38,7 @@
 <h2>Generate Student Report</h2>
 
 
-							<form action="generatePDF" method="Post">
+							<form action="generatePDFResults" method="Post">
 							<div class="btn1">
 							<div class="input_field">
 			                <label>Index No</label><input type="text" name="Stid" pattern="[S][0-9][0-9][0-9]" placeholder="SXXX"required><br>

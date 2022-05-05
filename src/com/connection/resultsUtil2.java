@@ -59,14 +59,14 @@ public class resultsUtil2 {
 		try {	
 			con=DBconnection.getConnection();
 			stmt=con.createStatement();
-			String sql= "select * from  student where Student_id='"+stno+"'"; //the + signs are for conacatanation
+			String sql= "select * from student where Student_id='"+stno+"'"; //the + signs are for conacatanation
 			rs=stmt.executeQuery(sql);
 			
 			while(rs.next()){
 			//returns a boolean value 
-				String id=rs.getNString(1);
+				String id=rs.getString(1);
 				String Name=rs.getString(2);
-				String grade=rs.getNString(3);
+				String grade=rs.getString(3);
 				
 				
 				

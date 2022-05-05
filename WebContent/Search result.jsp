@@ -13,6 +13,8 @@
 <link rel="stylesheet" href="css/exams.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" src="js.js"></script>
 </head>
 <body><input type="checkbox" id="nav_animation">
 
@@ -44,11 +46,11 @@
 <h3>Search Results</h3>
 </div>
 
- <div class="card-body col text-center" style="border-radius: 10px">
+ <div class="card-body col text-center" style="border-radius: 10px" id="report">
 
 	
 					<div class="table-responsive">
-							<table class="table table-striped table-hover">
+							<table class="table table-striped table-hover" >
 							
 								<thead>
 								    <tr>
@@ -112,14 +114,18 @@
 		<c:set var="StudentID " value="${stu.studentID}"/>
 		<c:set var="Fullname " value="${stu.fullname}"/>
 		
-		<h2 style="color:#69C369;font-weight: bold">${stu.studentID}</h2>
-		<h2 style="color:#69C369;font-weight: bold">${stu.fullname}</h2>
-		
-	
 		
 		
-	
-	
+		<div class="form-control">
+		<label style="color: teal;font-weight: 500;">Student ID: <h4 style="color: black; font-weight: 800;">${stu.studentID}</h4></label>
+		</div>
+		<div class="form-control">
+		<label style="color: teal;font-weight: 500">Student Name: <h4 style="color: black; font-weight: 800;">${stu.fullname}</h4></label>
+		</div>
+		<div style="display: flex; background-color: #000; ">
+		<img alt="Abacus Logo" src="css/logo.png" class="form-group col-md-2" style="margin: auto">
+		</div>
+		
 	
 	</c:forEach>
 				
@@ -127,7 +133,10 @@
 						</div>		
 								
 								
-</div>							
+</div>
+<div>		
+	<button onclick="generatePDF()"style="background-color: blue; width: 180px;height: 40px;color: white;border-radius: 4px">Download Report </button>
+</div>				
 </div>
 </div>	
 </body>
