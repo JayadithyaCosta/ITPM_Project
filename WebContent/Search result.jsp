@@ -122,9 +122,6 @@
 		<div class="form-control">
 		<label style="color: teal;font-weight: 500">Student Name: <h4 style="color: black; font-weight: 800;">${stu.fullname}</h4></label>
 		</div>
-		<div style="display: flex; background-color: #000; ">
-		<img alt="Abacus Logo" src="css/logo.png" class="form-group col-md-2" style="margin: auto">
-		</div>
 		
 	
 	</c:forEach>
@@ -133,10 +130,7 @@
 						</div>		
 								
 								
-</div>
-<div>		
-	<button onclick="generatePDF()"style="background-color: blue; width: 180px;height: 40px;color: white;border-radius: 4px">Download Report </button>
-</div>				
+</div>			
 </div>
 </div>	
 </body>

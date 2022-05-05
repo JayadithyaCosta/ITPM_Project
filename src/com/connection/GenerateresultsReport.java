@@ -33,9 +33,7 @@ public class GenerateresultsReport {
 		
 		
 		try {
-			
-//			String file_name="D:\\Sliit\\ITPM\\Results PDF\\'"+stid+"'.pdf";
-			
+						
 			String file_name="D:\\Sliit\\ITPM\\Reports_Genarated\\"+stid+".pdf";
 
 			Document document=new Document();

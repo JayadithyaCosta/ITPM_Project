@@ -33,20 +33,29 @@
 
 </div>
 
-<div class="workspace">
-<div class="wrapper">
-<h2>Generate Student Report</h2>
-
-
-							<form action="generatePDFResults" method="Post">
-							<div class="btn1">
-							<div class="input_field">
-			                <label>Index No</label><input type="text" name="Stid" pattern="[S][0-9][0-9][0-9]" placeholder="SXXX"required><br>
-			                </div>
-							<input type ="Submit" name="generate" Value="Download">
-							</div>
-							</form>
-</div>
+<div class="container container-table">
+    <div class="row vertical-center-row">
+        <div class="text-center col-lg-10 col-md-offset-4" style="left: 200px; margin-top: 150px; background-color: #ded6d5; border-radius: 10px">
+        <div class="card-header">
+        <h4>
+            Generate Student Report
+        </h4>
+  </div>
+  <div class="card-body">
+    <form action="generatePDFResults"  method="post">
+			<div class="input_field">
+			<label>Index No</label>
+			<input class="form-control col-md-6" style="margin-left: 220px" type="text" name="Stid" pattern="[S][0-9][0-9][0-9]" placeholder="SXXX"required><br>
+			</div>
+			
+			
+			<button type="submit" name="generate" value="Download" class="btn btn-primary" style="width: 25%">Download</button>
+			
+			
+	</form>	
+  </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
