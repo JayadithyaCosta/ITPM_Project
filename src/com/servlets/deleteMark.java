@@ -46,6 +46,7 @@ public class deleteMark extends HttpServlet {
 		   if(isTrue==true) {
 				  
 				out.println("<script type = 'text/javascript'>");
+				out.println("alert('Deleted Successfully!');");
 				out.println("var result= confirm(\"Confirm Delete!\")");
 		        out.println("location='deleteMark.jsp'");
 				

@@ -35,13 +35,14 @@
 </h4>
 </div>
 
+
 <a href="SystemHome.jsp"><i class="fas fa-home" aria-hidden="true"></i><span>Home</span></a>
 <a href="searchMarks.jsp"><i class="fa fa-archive" aria-hidden="true"></i><span>Search Marks</span></a>
 <a href="AddResults.jsp"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Results</span></a>
-<a href="Addprogress.jsp"><i class="fa fa-plus" aria-hidden="true"></i><span>Evaluate</span></a>
+<!--<a href="Addprogress.jsp"><i class="fa fa-plus" aria-hidden="true"></i><span>Evaluate</span></a>-->
 <a href="Editmark.jsp"><i class="fa fa-cogs" aria-hidden="true"></i><span>Update Results</span></a>
 <a href="deleteMark.jsp"><i class="fas fa-trash" aria-hidden="true"></i><span>Delete Results</span></a>
-<a href="SearchSubject.jsp"><i class="fas fa-edit" aria-hidden="true"></i><span>List Subject Result</span></a>
+<!--<a href="SearchSubject.jsp"><i class="fas fa-edit" aria-hidden="true"></i><span>List Subject Result</span></a>-->
 <a href="Report.jsp"><i class="fas fa-download" aria-hidden="true"></i><span>Download Report</span></a>
 
 </div>
@@ -50,13 +51,13 @@
 
 <div class="container container-table">
     <div class="row vertical-center-row">
-        <div class="text-center col-lg-10 col-md-offset-4" style="left: 150px; height: 285px; margin-top: 150px; background-color: #ded6d5; border-radius: 10px; width: 10rem">
+        <div class="text-center col-lg-10 col-md-offset-4" style="left: 150px; height: 285px; margin-top: 150px; border-radius: 10px; width: 10rem">
      
 	  <div class="card-body">
 	    <div class="alert alert-success d-flex align-items-center" role="alert" style="height: 95px; margin-top: 64px; width: 60px; width: 29rem; margin-left: 190px; align-content: center;">
 	  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
 	  <div style="margin-left: 25px; font-size: 20px">
-	    Exam marks for student added successfully! 
+	    Successful! 
 	  </div>
 	</div>
   </div>
