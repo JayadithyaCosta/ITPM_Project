@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Dashboard</title>
+<title>Insert title here</title>
 <style type="text/css">
 
 	h1{
@@ -46,36 +46,34 @@
 			padding-bottom:70px;
 	}
 	.box{
-			margin-left: 315px;
+			margin-left:220px;
 	
 	}
 
 </style>
+
 </head>
 <body>
-
-
-	<h1>Welcome!</h1>
+<h1>Welcome!</h1>
 	<br>
 	<br>
-	<div class="box">
+	<div class="box" >
 	<table>
 		<tr>
-			<td class="TDpadding"><a href="#"><img src="css/student2.png"><input class="btnHome" type="submit" name="submit" value="STUDENT"></a></td>
-			<td class="TDpadding"><a href="#"><img src="css/teacher.png" ><input class="btnHome" type="button" value="TEACHER"></a></td>
-			<td class="TDpadding"><a href="#"><img src="css/time.png"><input class="btnHome" type="submit" name="submit" value="TIME TABLES"></a></td>
-			<td class="TDpadding"><a href="#"><img src="css/attendance.png" style="height:70px;width:70px"><input class="btnHome" type="button" value="ATTENDANCE"></a></td>
+			<td class="TDpadding"><a href="#"><img src="logos/student2.png"><input class="btnHome" type="submit" name="submit" value="STUDENT"></a></td>
+			<td class="TDpadding"><a href="#"><img src="logos/teacher.png" ><input class="btnHome" type="button" value="TEACHER"></a></td>
+			<td class="TDpadding"><a href="#"><img src="logos/time.png"><input class="btnHome" type="submit" name="submit" value="TIME TABLES"></a></td>
+			<td class="TDpadding"><a href="#"><img src="logos/attendance.png" ><input class="btnHome" type="button" value="ATTENDANCE"></a></td>
 		</tr>
 	
 		<tr>
-			<td class="TDpadding"><a href="#"><img src="css/marks.png"><input class="btnHome" type="button" value="STUDENT MARKS"></a></td>
-			<td class="TDpadding"><a href="#"><img src="css/sport.png" ><input class="btnHome" type="button" style="font-size:11px" value="EXTRA CURRICULAR ACTIVITIES"></a></td>
-			<td class="TDpadding"><a href="AddExam.jsp"><img src="css/exam2.png"><input class="btnHome" type="submit" name="submit" value="EXAM"></a></td>
-			<td class="TDpadding"><a href="#"><img src="css/inventory.png"><input class="btnHome" type="button" value="INVENTORY"></a></td>
+			<td class="TDpadding"><a href="#"><img src="logos/marks.png"><input class="btnHome" type="button" value="STUDENT MARKS"></a></td>
+			<td class="TDpadding"><a href="#"><img src="logos/sport.png" ><input class="btnHome" type="button" style="font-size:11px" value="EXTRA CURRICULAR ACTIVITIES"></a></td>
+			<td class="TDpadding"><a href="#"><img src="logos/exam2.png"><input class="btnHome" type="submit" name="submit" value="EXAM"></a></td>
+			<td class="TDpadding"><a href="Searchitem.jsp"><img src="logos/inventory.png"><input class="btnHome" type="button" value="INVENTORY"></a></td>
 		</tr>
 	
 	</table>
 	</div>
-	
 </body>
 </html>
