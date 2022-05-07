@@ -1,12 +1,14 @@
 @charset "ISO-8859-1";
-@import url('https://fonts.googleapis.com/css?family=Helvetica');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   outline: none;
-  font-family: Roboto ;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,
+  "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji",
+  "Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 
 }
 
@@ -16,16 +18,15 @@ body{
 
 .wrapper{
   position: absolute;
-  top: 70%;
-  left: 60%;
- 
+  top: 110%;
+  left: 60%; 
   transform: translate(-50%,-50%);
   max-width: 700px;
   width: 100%;
   background-color:white;
   padding: 25px;
   border-radius: 5px;
-  box-shadow: 4px 4px 2px #18A81A; 
+  box-shadow: 4px 4px 2px #030a45; 
   
 }
 .wrapperadd{
@@ -57,13 +58,14 @@ body{
 
 .wrapper .input_field{
   margin-bottom: 10px;
-  color: grey;
+  color: #030a45;
   font-family: Nunito,-apple-system,BlinkMacSystemFont,
   "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji",
   "Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
 
 .wrapper .input_field input[type="text"],
+.wrapper .input_field input[type="date"],
 .wrapper .input_field input[type="password"]{
   border: 1px solid #e0e0e0;
   width: 100%;
@@ -78,7 +80,7 @@ body{
   padding: 10px;
   text-align: center;
   width: 100%;
-  background: #25cb85;
+  background: #030a45;
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -94,7 +96,7 @@ body{
   padding: 10px;
   text-align: center;
   width: 100%;
-  background: #25cb85;
+  background: #030a45;
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -105,12 +107,12 @@ body{
 select{
  
  
-  border: 0px solid #e0e0e0;
+  border: 0px solid #008B8B;
   width: 60%;
   padding: 5px;
   text-align: center;
   background: #ffffff;
-  color: grey;
+  color: rgb(3, 10, 69);
   text-transform: uppercase;
   letter-spacing: 5px;
   font-weight: bold;
@@ -129,23 +131,18 @@ label{
 
 
 
-
-
-
-
 header{
 	width: 100%;
-	height: 20px;
-	position: fixed;
+	height: 100px;
+	position: absolute;
 	background:white;
 	padding: 29px;
-	box-shadow: 2px 2px 5px grey;
+	box-shadow: 2px 3px 5px grey;
 }
 
 .sidenav{
 	position: fixed;
-	background: #010950;
-
+	background: #030a45;
 	width: 248px;
 	height: 100%;
 	padding-top: 30px;
@@ -155,7 +152,7 @@ header{
 }
 
 .sidenav .user_type{
-	width: 50px;
+	width: 140px;
 	height: 50px;
 	border-radius: 10px;
 	margin-left: 10px;
@@ -164,7 +161,7 @@ header{
 
 .company_name h3{
 	margin: 0;
-	color: #fff;
+	color: #030a45;
 	font-size: 25px;
 	
 	
@@ -175,7 +172,7 @@ header{
 }
 
 .company_name span{
-	color: #c0c0c0;
+	color: #030a45;
 }
 
 .logout_btn{
@@ -222,14 +219,14 @@ header{
 }
 
 .sidenav a:hover{
-	background: rgba(134, 209, 255, 0.81);
+	background:#008B8B;
 }
 
 
 label #sidebar_btn{
 	z-index: 1;
-	color: #ffffff;
-	position: fixed;
+	color: #030a45;
+	position: absolute;
 	cursor: pointer;
 	left: 300px;
 	font-size: 20px;
@@ -281,11 +278,11 @@ label #sidebar_btn{
 
 
 label #sidebar_btn:hover{
-	color: #008000;
+	color: #008B8B;
 }
 
 .workspace{
-	height: 111vh;
+	height: 100vh;
 	margin-left: 250px;
 	background-repeat:no-repeat;
 	background-position: center;
@@ -354,12 +351,13 @@ table
 	text-align:left;
 }
 		
-table th
+th
 {
-	background-color: #006DCC;
+	background-color:black;
 	color: white;
 }
 
+tr:nth-child(even) {background-color:#f2f2f2}
 
 
 .wrapperadd h2{
@@ -397,7 +395,7 @@ table th
   padding: 8px;
   text-align: center;
   width: 70%;
-  background: #25cb85;
+  background: #030a45;
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -405,3 +403,225 @@ table th
   border-radius: 15px;
   cursor: pointer;
 }
+#StudentSearchBox{		
+		width:760px;
+		height:200px;
+		float:left;
+		background-color:#ffffff;
+		border-radius: 25px;
+		border-style: outset #c0c0c0;
+		border-width: 2px;
+		margin-left:430px; 
+		margin-top:160px;
+		box-shadow: 5px 10px #030a45;
+	}
+	
+#StudentviewBox{		
+		width:760px;
+		height:150px;
+		float:left;
+		background-color:#ffffff;
+		border-radius: 25px;
+		border-style: outset #c0c0c0;
+		border-width: 2px;
+		margin-left:430px; 
+		margin-top:160px;
+		box-shadow: 5px 10px #030a45;
+	}
+	
+#searchbox{
+	width:30%;
+    border:2px solid #c0c0c0 ;
+    border-radius:4px;
+    
+    margin:-63px 0 0 280px;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+    transition:.3s;
+    font-size: 20px;
+    text-align: center;
+    float:left;
+    position:fixed;
+}
+h4 { 
+  display: block;
+  font-size: 2em;
+  margin-top: 0.57em;
+  margin-bottom: 0.67em;
+  margin-left: 70px;
+  margin-right: 0em;
+  font-weight: normal;
+   color: #030a45;
+  
+}
+#searchbtn{
+  border-radius: 8px;
+  background-color: #007bff; 
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 3px 0px 0px 140px;
+  cursor: pointer;
+  width:60%;
+  height:50px;
+}
+
+#viewbtn{
+  border-radius: 8px;
+  background-color: #007bff; 
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 15px 0px 0px -150px;
+  cursor: pointer;
+  width:80%;
+  height:50px;
+}
+
+#downloadreportbtn{
+  border-radius: 8px;
+  background-color: #007bff; 
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 15px 0px 0px 270px;
+  cursor: pointer;
+  width:20%;
+  height:50px;
+}
+
+
+#StudentdetailsBox{		
+		width:760px;
+		height:500px;
+		float:left;
+		background-color:#ffffff;
+		border-radius: 25px;
+		border-style: outset #c0c0c0;
+		border-width: 5px;
+		margin-left:430px; 
+		margin-top:160px;
+		box-shadow: 5px 0px #030a45;
+	}
+h2 { color: #030a45; }
+
+#updatebtn{
+  border-radius: 8px;
+  background-color: #007bff; 
+  border: none;
+  color: white;
+  padding: 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 5px -5px 5px 170px;
+  cursor: pointer;
+  width:20%;
+  height:30px;
+}
+
+#removebtn{
+  border-radius: 8px;
+  background-color: #007bff; 
+  border: none;
+  color: white;
+  padding: 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 3px 0px 0px 20px;
+  cursor: pointer;
+  width:20%;
+  height:30px;
+}
+#btnBox{		
+		width:800px;
+		height:50px;
+		float:left;
+		background-color:#ffffff;
+		border-radius: 25px;
+		border-style: outset #c0c0c0;
+		border-width: 5px;
+		margin-left:-25px; 
+		margin-top:0px;
+		
+	}
+
+#updatebtn2{
+  border-radius: 8px;
+  background-color: #007bff; 
+  border: none;
+  color: white;
+  padding: 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 10px -5px 5px 170px;
+  cursor: pointer;
+  width:40%;
+  height:30px;
+}
+
+#drpdwnbtn{	
+ 	padding: 5px;
+  	font-size: 16px;
+  	border: none;
+  	cursor: pointer;
+  	width:400px;
+  	height:100px;
+  	margin: -60px 0px 0px 320px;
+}
+
+#reporttableBox{		
+		width:1060px;
+		min-height: 60px;
+		float:left;
+		background-color:#c0c0c0;
+		border-radius: 25px;
+		border-style: outset #c0c0c0;
+		border-width: 5px;
+		margin-left:249px; 
+		margin-top:40px;
+		
+	}
+
+#ReportTable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  font-size:16px;
+}
+
+#ReportTable td, #ReportTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#ReportTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#ReportTable tr:hover {background-color: #ddd;}
+
+#ReportTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #030a45;
+  color: white;
+}	
+	
