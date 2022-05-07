@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Download Exam Details</title>
+<title>Download Exam Paper</title>
 <link rel="stylesheet" href="css/exams.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
@@ -20,10 +20,11 @@
 		</label>
 
 		<div class="company_name">
-			<h3 align="center"></h3>
+			<h3 align="center">
+				<span> Kanampella </span><span> Junior </span><span> School </span>
+			</h3>
 
 		</div>
-
 
 	</header>
 
@@ -32,7 +33,6 @@
 			<img src="css/logo.jpeg" class="user_type" alt="">
 
 		</center>
-
 
 		<a href="AddRegistrationDetails.jsp"><i class="fa fa-plus"
 			aria-hidden="true"></i><span>Add Registration </span></a> <a
@@ -58,7 +58,7 @@
 
 
 
-	<form action="generatePDFResults" method="post">
+	<form action="QuestionpaperReport" method="post">
 
 		<div class="wrapper">
 
@@ -67,8 +67,8 @@
 					type="Submit" name="generate" Value="Download"></i>
 			</div>
 		</div>
-	</form>
 
+	</form>
 
 
 
