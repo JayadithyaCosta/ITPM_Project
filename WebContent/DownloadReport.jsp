@@ -28,7 +28,7 @@ tr:nth-child(even) {
 
 </head>
 <body>
-<form action="Downloadreportservlet" method="post" >
+<form action="DownloadReportServlet" method="post" >
 <center>
      <table>
         <tr >

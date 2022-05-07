@@ -14,8 +14,8 @@ import com.classes.item;
 import com.connection.ItemDButil;
 
 
-@WebServlet("/Downloadreportservlet")
-public class Downloadreportservlet extends HttpServlet {
+@WebServlet("/DownloadReportServlet")
+public class DownloadReportServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
