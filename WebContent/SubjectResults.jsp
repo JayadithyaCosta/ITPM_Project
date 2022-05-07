@@ -1,13 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    	<%@page import="com.classes.Results"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Search marks</title>
-<link rel="stylesheet" href="css/exams.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+<title>Search resultt</title>
 
+<link rel="stylesheet" href="css/exams.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
 <body>
 <input type="checkbox" id="nav_animation">
@@ -49,30 +52,44 @@
 <div class="workspace">
 <div class="wrapper">
 <h2>Search Results</h2>
-<form action="SearchSubject"  method="post">
-				<div class="input_field">
-			<label>Select subject:</label><select name="Subject" required>
-			<option value="Maths" >Maths</option>
-			<option value="English">English</option>
-			<option value="History">History</option>
-			<option value="Religion" >Religion</option>
-			<option value="Sinhala Lang and lit">Sinhala lang and lit</option>
-			<option value="Science">Science</option>
-			<option value="Music" >Music</option>
-		   <option value="English Literature">English Literature</option>
-		   <option value="IT">IT</option>
-		   <option value="Hygiene" >Hygiene</option>
-		   <option value="Western Music">Western Music</option>
-		   <option value="Business Studies">Business Studies</option>
-		   </select>
-		   </div>
+	
+   
+									
+								
+				                 
+				                
+				                 
+							<table>
+								
+									<tr>
+										
+										<th>Student id</th>
+										<th>Marks</th>
+										
+									</tr>
+									
+								  <c:forEach var="res1" items="${resdetails1}">
+								  
+				                  <c:set var="stid" value="${res1.stid}"/>
+				                 <c:set var="mark" value="${res1.mark}"/>
+				                 <c:set var="subject" value="${res1.subject}"/>
+							
 			
-			<div class="btn1">
-			<input type="submit" name="Search" value="Search">
-			</div>
-			
-</form>	
-		
+								<tr>
+								<td>${res1.stid}</td>
+								<td>${res1.mark}</td>
+								
+								
+				
+				</tr>
+				
+				
+								
+								
+								
+							
+							</c:forEach>
+							</table>
 </div>
 </div>	
 </body>
