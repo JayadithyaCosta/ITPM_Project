@@ -6,11 +6,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
 <link rel="stylesheet" href="css/exams.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script type="text/javascript" src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
-<script type="text/javascript" src="js.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 <style type="text/css">
 #wrapper{
   position: absolute;
@@ -22,17 +21,39 @@
   background-color:white;
   padding: 25px;
   border-radius: 5px;
-  box-shadow: 4px 4px 2px #18A81A;
-  } 
- 
+  box-shadow: 4px 4px 2px #18A81A; 
+  
+
+  
+}
+#btupdate{
+  background-color: #4aac2ae8;
+  border: none;
+  border-radius: 4px;
+  width: 69px;
+  color: white;
+} 
+#btdelete{
+  background-color: red;
+  border: none;
+  border-radius: 4px;
+  width: 69px;
+  color: white;
+} 
+#txtinput:hover {
+  border-color:blue ;
+}
 
   
 
 </style>
+
+
 </head>
-<body>
-<input type="checkbox" id="nav_animation">
-	
+<body><input type="checkbox" id="nav_animation">
+
+
+
 <div class="sidenav">
 
 <div>
@@ -41,7 +62,7 @@
    ABACUS
 </h4>
 </div>
-			
+
 			<a href="Home.jsp"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
 			<a href="Additem.jsp"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Item</span></a>
 			<a href="search.jsp"><i class="fa fa-search" aria-hidden="true"></i><span>Search Item Details</span></a>
@@ -49,24 +70,30 @@
 			<!-- <a href="reportinput.jsp"><i class="fa fa-calculator" aria-hidden="true"></i><span>item count</span></a> -->
 			<a href="DownloadReport.jsp"><i class="fa fa-archive" aria-hidden="true"></i><span>Inventory Report</span></a>
 			
-		
 			
 			</div>
 			
-
+			
+		
 <div class="container container-table">
     <div class="row vertical-center-row">
-        <div class="text-center col-lg-10 col-md-offset-4" style="left: 200px; margin-top: 150px; background-color: #ded6d5; border-radius: 10px">
+        <div class="text-center col-lg-10 col-md-offset-4" style="left: 100px; margin-top: 100px; background-color: #ded6d5; border-radius: 10px">
         <div class="card-header">
         <h4>
             Search Results
         </h4>
   </div>
   <div class="card-body">
-    <form action="Reportservlet"  method="post">
+ 	<form action="search2servlet" method="post" >
 			<div class="input_field">
-			<label for="assing">Item condition</label>
-            <select name="Status">
+             <label>Item Name</label>
+             <input type="text" class="form-control col-md-4" style="margin-left: 300px" name="itemName" placeholder="Enter item name" >
+             </div>
+             
+			
+		    <div class="form-group col-md-4" style="margin-left: 300px; margin-top: 25px">
+		      <label for="assing">Item condition</label>
+            	<select name="Status">
             
               <option value="Available">Available</option>
               <option value="Discurd">Broken</option>
@@ -74,12 +101,11 @@
               <option value="Re-condition">Re-condition</option>
               
               </select>
-          
-
-			</div>
+		    </div>
+		  
 			
 			
-			<button type="submit" name="Search" value="Search" class="btn btn-primary" style="width: 25%">Submit</button>
+			<button type="submit" name="submit" class="btn btn-primary" id="btnsubmit" style="width: 25%">Search</button>
 			
 			
 	</form>	
@@ -87,37 +113,54 @@
         </div>
     </div>
 </div>
-		
-	
- <div id="report" style="padding-left:0px;padding-right: 20px">
- <table style="margin-left: 18%;width:80%;padding-left: 10%">
-<th>Item No</th>
-<th>Item Name</th>
-<th>Item Code</th>
-<th>Item Categorey</th>
-<th>Item Description</th>
-<th>Item Condition</th>
-<th>Date</th>
+
+
+
+<div style="margin-left: 237px; margin-right: 8px">
+<div style="margin-top: 8vh; margin-left: 20px">
+	<table class="table table-striped table-hover" style="font-size: 20px">
+	<thead>
+			<tr>
+				<th scope="col">Item No</th>
+				<th scope="col">Item Name</th>
+				<th scope="col">Item Code</th>
+				<th scope="col">Item Category</th>
+				<th scope="col">Item Description</th>
+				<th scope="col">Item Condition</th>
+				<th scope="col">Date</th>
+			</tr>
+  	</thead>
+  	
+  	
 
 <c:forEach var="itm"  items="${itemDetails}">
+
+
+
+
 <tr>
 
-<td id="td1">${itm.itemNo}</td>
-<td id="td1">${itm.itemname}</td>
-<td id="td1">${itm.itemcode}</td>
-<td id="td1">${itm.category}</td>
-<td id="td1">${itm.description}</td>
-<td id="td1">${itm.status}</td>
-<td id="td1">${itm.date}</td>
+
+
+<td>${itm.itemNo}</td>
+<td>${itm.itemname}</td>
+<td>${itm.itemcode}</td>
+<td>${itm.category}</td>
+<td>${itm.description}</td>
+<td>${itm.status}</td>
+<td>${itm.date}</td>
+
+
+
+
 </tr>
 
-</c:forEach>  
-</div> 
-<tr>
-    <td><a  href="DownloadReport.jsp"><button style="background-color: blue; width: 180px;height: 40px;color: white;border-radius: 4px">Download Report pdf </button></a> </td>
-</tr>
 
+
+
+</c:forEach>
 </table>
-
+</div>
+</div>
 </body>
 </html>

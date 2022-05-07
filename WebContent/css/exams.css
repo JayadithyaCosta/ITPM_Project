@@ -222,7 +222,7 @@ header{
 }
 
 .sidenav a:hover{
-	background:#008B8B;
+	background: rgba(134, 209, 255, 0.81);
 }
 
 
@@ -353,12 +353,13 @@ table
 	font-size:25px;
 	text-align:left;
 }
-
-thead th {
-    background-color: #006DCC;
-    color: white;
-}
 		
+table th
+{
+	background-color: #006DCC;
+	color: white;
+}
+
 
 
 .wrapperadd h2{
