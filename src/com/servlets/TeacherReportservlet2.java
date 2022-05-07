@@ -31,7 +31,7 @@ public class TeacherReportservlet2 extends HttpServlet {
 			request.setAttribute("itemDetails1",itemDetails1);
 			request.setAttribute("itemDetails",itemDetails);
 		    
-			RequestDispatcher dis =request.getRequestDispatcher("TeacherReport2.jsp");
+			RequestDispatcher dis =request.getRequestDispatcher("TeacherReport3.jsp");
 			dis.forward(request, response);
 	}
 
