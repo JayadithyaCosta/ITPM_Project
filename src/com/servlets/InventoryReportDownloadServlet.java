@@ -1,4 +1,4 @@
-package com.servlets;
+package com.servlet;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,21 +11,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.classes.item;
-import com.connection.TeacherDButil;
-import com.classes.Teacher;
-import com.classes.Techer_subject;
+import com.connection.ItemDButil;
 
 
-@WebServlet("/Downloadreportservlet")
-public class Downloadreportservlet extends HttpServlet {
+@WebServlet("/DownloadReportServlet")
+public class InventoryReportDownloadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String Status=request.getParameter("Status");
 		
-
-		List<Teacher> itemDetails=TeacherDButil.getiItems2(Status);
+		List<item> itemDetails=ItemDButil.getiItems2(Status);
 		request.setAttribute("itemDetails",itemDetails);
 	    
 		RequestDispatcher dis =request.getRequestDispatcher("DownloadReport.jsp");
