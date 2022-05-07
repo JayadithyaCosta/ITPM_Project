@@ -1,10 +1,12 @@
-package com.student;
+package com.connection;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.classes.StudentClass;
 
 
 
@@ -20,7 +22,7 @@ public class StudentDButil {
 public static boolean validate(String sid) {
 		
 		try {
-			 con = DBConnection.getConnection();
+			 con = DBconnection.getConnection();
 		     stmt =con.createStatement();
 		     
 		     String sql="select * from student_details where student_id='"+sid+"'";
@@ -53,7 +55,7 @@ public static boolean validate(String sid) {
 		
 		
 		try {
-			 con = DBConnection.getConnection();
+			 con = DBconnection.getConnection();
 		     stmt =con.createStatement();
 			
 		     String sql = "insert into student_details values(0,'"+sid+"','"+name+"','"+gender+"','"+dob+"','"+address+"','"+grade+"','"+cls+"','"+gname+"','"+contact+"','"+occupation+"')";
@@ -76,7 +78,7 @@ public static boolean validate(String sid) {
 	public static boolean updatestudent(String id,String sid,String name,String gender,String dob,String address,String grade,String cls,String gname,String contact,String occupation) {
 		
 		try {
-			 con = DBConnection.getConnection();
+			 con = DBconnection.getConnection();
 		     stmt =con.createStatement();
 		     
 		     String sql = "update student_details set student_id='"+sid+"',full_name='"+name+"',gender='"+gender+"',dob='"+dob+"',address='"+address+"',grade='"+grade+"',class='"+cls+"',guardian_name='"+gname+"',contact_number ='"+contact+"',occupation='"+occupation+"'"
@@ -103,7 +105,7 @@ public static boolean validate(String sid) {
 		ArrayList<StudentClass> stu = new ArrayList<>(); 
 		
 		try {
-			con = DBConnection.getConnection();
+			con = DBconnection.getConnection();
 		    stmt =con.createStatement();
 		    
 		    String sql = "select * from student_details where student_id ='"+sid+"'";
@@ -138,7 +140,7 @@ public static boolean validate(String sid) {
 		int convId = Integer.parseInt(id);
 		
 		try {
-			con=DBConnection.getConnection();
+			con=DBconnection.getConnection();
 			stmt=con.createStatement();
 			String sql="delete from student_details where id='"+convId+"' ";
 			int r=stmt.executeUpdate(sql);
@@ -166,7 +168,7 @@ public static boolean validate(String sid) {
 		ArrayList<StudentClass> stu = new ArrayList<StudentClass>();
 		
 		try {
-			con=DBConnection.getConnection();
+			con=DBconnection.getConnection();
 			stmt =con.createStatement();
 	        String sql=" select * from student_details where  grade = '"+grade+"' ORDER BY gender";
 			res=stmt.executeQuery(sql);

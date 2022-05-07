@@ -26,7 +26,7 @@ public class ItemDButil {
 			try {
 	    		
 				
-				con=Dbconnection.getConnection();
+				con=DBconnection.getConnection();
 				stmt =con.createStatement();
 				String sql = "insert into inventory values (0,'"+itemname+"','"+itemcode+"','"+category+"','"+description+"','"+Status+"',now())";
 				int rs = stmt.executeUpdate(sql);
@@ -50,7 +50,7 @@ public class ItemDButil {
 	
 	public static  boolean searchvalid(String itemName,String Status) {
 
-	try {	con=Dbconnection.getConnection();
+	try {	con=DBconnection.getConnection();
 		stmt =con.createStatement();
 		
 		String sql="select * from inventory where Itemname LIKE '"+itemName+"%' AND Status LIKE '%"+Status+"%'";
@@ -79,7 +79,7 @@ public static List<item> getiItems(String itemName,String Status){
 		ArrayList<item> items = new ArrayList<item>();
 		
 		try {
-			con=Dbconnection.getConnection();
+			con=DBconnection.getConnection();
 			stmt =con.createStatement();
 	        String sql=" select * from inventory where itemname LIKE '"+itemName+"%' AND Status LIKE '%"+Status+"%'";
 			rs=stmt.executeQuery(sql);
@@ -112,7 +112,7 @@ public static List<item> getiItems(String itemName,String Status){
 		
 		int ItemNO1=Integer.parseInt(ItemNo);
 		try {
-			con=Dbconnection.getConnection();
+			con=DBconnection.getConnection();
 			stmt =con.createStatement();
 			String sql ="update inventory set  itemname='"+ItemName+"', itemcode='"+ItemCode+"',description='"+description+"',status='"+Status+"',date='"+Date+"' "+"where itemNo ='"+ItemNO1+"'";
 			int rs=stmt.executeUpdate(sql);
@@ -138,7 +138,7 @@ public static List<item> getiItems(String itemName,String Status){
 public static boolean DeleteItem(String Ino) {
 		int conIno=Integer.parseInt(Ino);
 		try {
-			con=Dbconnection.getConnection();
+			con=DBconnection.getConnection();
 			stmt =con.createStatement();
 			String sql= "delete from inventory where itemNo='"+conIno+"'";
 			int rs=stmt.executeUpdate(sql);
@@ -170,7 +170,7 @@ public static boolean DeleteItem(String Ino) {
 
 public static  boolean Reportvalid() {
 
-	try {	con=Dbconnection.getConnection();
+	try {	con=DBconnection.getConnection();
 		stmt =con.createStatement();
 		
 		String sql="select DISTINCT(Item_Name) as name from inventory group by Item_Name";
@@ -199,7 +199,7 @@ public static List<report> getName(){
 	ArrayList<report> items = new ArrayList<report>();
 	
 	try {
-		con=Dbconnection.getConnection();
+		con=DBconnection.getConnection();
 		stmt =con.createStatement();
         String sql=" select DISTINCT(Item_Name) as name from inventory";
 		rs=stmt.executeQuery(sql);
@@ -224,7 +224,7 @@ public static int getiIotalItem(String ItemName){
 	
 	String count = null;
 	try {
-		con=Dbconnection.getConnection();
+		con=DBconnection.getConnection();
 		stmt =con.createStatement();
         String sql="select COUNT(Item_Name) as name from inventory where  Item_Name='"+ItemName+"'";
 		rs=stmt.executeQuery(sql);
@@ -252,7 +252,7 @@ public static int getiIotalItemAvilable(String ItemName){
 	
 	String count = null;
 	try {
-		con=Dbconnection.getConnection();
+		con=DBconnection.getConnection();
 		stmt =con.createStatement();
         String sql="select COUNT(Item_Name) as name from inventory where  Item_Name='"+ItemName+"' and Status='Available'";
 		rs=stmt.executeQuery(sql);
@@ -280,7 +280,7 @@ public static int getiIotalItemUsing(String ItemName){
 	
 	String count = null;
 	try {
-		con=Dbconnection.getConnection();
+		con=DBconnection.getConnection();
 		stmt =con.createStatement();
         String sql="select COUNT(Item_Name) as name from inventory where  Item_Name='"+ItemName+"' and Status='Using'";
 		rs=stmt.executeQuery(sql);
@@ -308,7 +308,7 @@ public static int getiIotalItemRecondition(String ItemName){
 	
 	String count = null;
 	try {
-		con=Dbconnection.getConnection();
+		con=DBconnection.getConnection();
 		stmt =con.createStatement();
         String sql="select COUNT(Item_Name) as name from inventory where  Item_Name='"+ItemName+"' and Status='Re-condition'";
 		rs=stmt.executeQuery(sql);
@@ -336,7 +336,7 @@ public static int getiIotalItemDiscurd(String ItemName){
 	
 	String count = null;
 	try {
-		con=Dbconnection.getConnection();
+		con=DBconnection.getConnection();
 		stmt =con.createStatement();
         String sql="select COUNT(Item_Name) as name from inventory where  Item_Name='"+ItemName+"' and Status='Discurd'";
 		rs=stmt.executeQuery(sql);
@@ -363,7 +363,7 @@ public static String getitemname(String ItemName){
 	
 	String count = null;
 	try {
-		con=Dbconnection.getConnection();
+		con=DBconnection.getConnection();
 		stmt =con.createStatement();
         String sql="select DISTINCT(Item_Name) as name from inventory where Item_Name='"+ItemName+"'";
 		rs=stmt.executeQuery(sql);
@@ -392,7 +392,7 @@ public static List<item> getiItems2(String Status){
 	ArrayList<item> items = new ArrayList<item>();
 	
 	try {
-		con=Dbconnection.getConnection();
+		con=DBconnection.getConnection();
 		stmt =con.createStatement();
         String sql=" select * from inventory where status LIKE '%"+Status+"%' ORDER BY catagory";
 		rs=stmt.executeQuery(sql);
