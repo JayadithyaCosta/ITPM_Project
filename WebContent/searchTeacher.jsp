@@ -48,13 +48,13 @@
 			<i class="fas fa-bars" id="sidebar_btn"></i>
 			</label>
 		
-			<div class="company_name"style="margin-left: 350px;">
+			<div class="company_name"style="margin-left: 360px;height: 70px; ">
 
-	<h3 style="margin-left: 280px;"><span> Teacher </span><span> Management </span></h3>
-
-	</div>
+              <h3 style="margin-left: 350px;"><span> Teacher </span><span> Management </span></h3>
+	        </div>
 
 	
+			
 		</header>
 			
 			<div class="sidenav">
@@ -71,6 +71,7 @@
 			<a href="TeacherReport.jsp"><i class="fa fa-folder" aria-hidden="true"></i><span>Teacher Report</span></a>
 			<a href="TeacherReport2.jsp"><i class="fa fa-address-card" aria-hidden="true"></i><span>Individual Teacher Report</span></a>
 			
+			
 		
 			
 			</div>
@@ -86,19 +87,27 @@
 		  			
 
 
- <form action="searchsubject" method="post" >
+ <form action="SearchTeacherservlet" method="post" >
 
      <table style="margin-left: 100px">
-        <tr >
-           <td>
-            
-            <div class="input_field">
+       <tr >
+            <td>
+             <div class="input_field">
              <label>Teacher name</label><input type="text" name="TName" placeholder="enter Teacher name" >
              </div>
              
-             </td>
+            </td>
           
-       </tr>
+             <td>
+             <div style="margin-left: 50px">
+             <label for="assing">Status</label>
+             <select name="Status">
+               <option value="Active">Active</option>
+               <option value="Inactive">Inactive</option>
+              </select>
+             </div>
+             </td>
+        </tr>
      </table>    
       
           <div class="btn1">
@@ -114,11 +123,11 @@
 
 <table style="margin-left: 18%;width:80%;padding-left: 10%">
 
-<th>Teacher Name</th>
-<th>Allocated year</th>
-<th>Grade</th>
-<th>Class</th>
-<th>Subject</th>
+<th>Full Name</th>
+<th>NIC</th>
+<th>Phone</th>
+<th>Joindate</th>
+<th>Qulification</th>
 
 
 
@@ -127,44 +136,14 @@
 
 <tr>
 
-
 <td>${itm.fullname}</td>
 <td>${itm.nic}</td>
 <td>${itm.phone}</td>
 <td>${itm.joindate}</td>
-
 <td>${itm.qulification}</td>
 
-
-
 </tr>
 </c:forEach>
-<c:forEach var="itm"  items="${itemDetails1}">
-
-
-
-
-<tr>
-
-
-<td>${itm.teachername}</td>
-<td>${itm.year}</td>
-<td>${itm.grade}</td>
-<td>${itm.clz}</td>
-<td>${itm.subject}</td>
-
-
-
-
-
-</tr>
-
-
-
-
-
-</c:forEach>
-
 
 
 </table>
