@@ -11,42 +11,38 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.classes.Techer_subject;
+import com.classes.item;
 import com.connection.TeacherDButil;
+import com.classes.Teacher;
 
 
-@WebServlet("/searchsubject")
-public class searchsubject extends HttpServlet {
+@WebServlet("/SearchFORupdateservlet")
+public class SearchFORupdateservlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		PrintWriter out =response.getWriter();
 		response.setContentType("text/html");
 		
-		String TeacherName=request.getParameter("TName");
+		String itemName=request.getParameter("TName");
+		String Status=request.getParameter("Status");
 		
-		boolean istrue1;
-		istrue1=TeacherDButil.searchvalid2(TeacherName);
+		boolean istrue;
 		
-		if(istrue1==true) {
-			try{List<Techer_subject> itemDetails1=TeacherDButil.SerchTeacher(TeacherName);
-			request.setAttribute("itemDetails1",itemDetails1);
-			}
-			catch (Exception e) {
-				e.printStackTrace();
-			}
-			
-			
-			RequestDispatcher dis =request.getRequestDispatcher("searchSubject.jsp");
+		istrue=TeacherDButil.searchvalid(itemName,Status);
+		if(istrue==true) {
+			List<Teacher> itemDetails=TeacherDButil.getTeacher(itemName,Status);
+			request.setAttribute("itemDetails",itemDetails);
+		    
+			RequestDispatcher dis =request.getRequestDispatcher("Search_for_update.jsp");
 			dis.forward(request, response);
 		}
 		else
 		{
 			out.println("<script type='text/javascript'>");
-			out.println("alert('Teacher name  not Found');");
-			out.println("location='searchSubject.jsp'");
+			out.println("alert('Item Name  Not Found');");
+			out.println("location='Search_for_update.jsp'");
 			out.println("</script>");
 			
 		}
