@@ -38,21 +38,17 @@ public class StudentInsertServlet extends HttpServlet {
 		
 		if(isTrue == true)
 		{
-			/*
-			 * RequestDispatcher dis = request.getRequestDispatcher("SearchStudent.jsp");
-			 * dis.forward(request, response);
-			 */
-			out.println("<script type='text/javascript'>");
-			out.println("alert('New Student succesfully added!');");
-			out.println("location='SearchStudent.jsp'");
-			out.println("</script>");
+		
+			
+			  out.println("<script type='text/javascript'>");
+			  out.println("alert('New Student succesfully added!');");
+			  out.println("location='SearchStudent.jsp'"); out.println("</script>");
+			 
 			
 		}
 		else {
-			/*
-			 * RequestDispatcher dis2 = request.getRequestDispatcher("unsuccess.jsp");
-			 * dis2.forward(request, response);
-			 */
+			
+			
 			out.println("<script type='text/javascript'>");
 			out.println("alert('Unsuccessful!');");
 			out.println("location='studentinsert.jsp'");
