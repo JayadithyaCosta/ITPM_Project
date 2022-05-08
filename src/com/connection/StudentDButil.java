@@ -18,7 +18,7 @@ public class StudentDButil {
 	private static Statement stmt =null;
 	private static ResultSet res=null;
 	
-
+//Validate Student ID
 public static boolean validate(String sid) {
 		
 		try {
@@ -47,7 +47,7 @@ public static boolean validate(String sid) {
 		return isSuccess;
 	}
 
-
+	//Student Insert Method
 	public static boolean insertStudent(String sid, String name, String gender, String dob, String address, String grade, String cls, 
 			String gname, String contact, String occupation) {
 		
@@ -75,6 +75,7 @@ public static boolean validate(String sid) {
 		return isSuccess;
 	}
 	
+	//Student Update Method
 	public static boolean updatestudent(String id,String sid,String name,String gender,String dob,String address,String grade,String cls,String gname,String contact,String occupation) {
 		
 		try {
@@ -99,6 +100,7 @@ public static boolean validate(String sid) {
 		return isSuccess;
 	}
 	
+	//Get Student details 
 	public static List<StudentClass> getStudentDetails(String sid){
 		
 		//int convertedID = Integer.parseInt(id);
