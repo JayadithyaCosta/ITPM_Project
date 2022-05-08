@@ -91,7 +91,15 @@ border-radius: 8px;
 	Contact : <input type="text" name="contact" id="txtinput" value="<%=contact%>" readonly><br>
 	Occupation : <input type="text" name="occupation" id="txtinput" value="<%=occupation%>" readonly><br>
 	
-	<input type="submit" name="submit" value="Delete Student Details" id="updatebtn2"><br>
+	<input onclick="checker()" type="submit" name="submit" value="Delete Student Details" id="updatebtn2"><br>
+	<Script>
+		function checker(){
+			var result= confirm('Are you Sure?');
+			if(result==false){
+				event.preventDefault();
+			}
+		}
+	</Script>
 	</div>	
 	</form>
 	</div>
