@@ -150,6 +150,7 @@ margin-left: 350px;
               <option value="Business & Accounting Studies">Business & Accounting Studies</option>
               <option value="Agriculture & Food Technology">Agriculture & Food Technology</option>
               <option value="Arts & Crafts	">Arts & Crafts</option>
+              <option value="Arts & Crafts	">Genaral English</option>
              </select>
 			
 			<br/>
