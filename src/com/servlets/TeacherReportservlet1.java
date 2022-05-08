@@ -23,13 +23,16 @@ public class TeacherReportservlet1 extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out =response.getWriter();
 		response.setContentType("text/html");
+		
+		//store front end pass value to variable
 		String status=request.getParameter("Status");
 		
+		    //call function
 			List<Teacher> itemDetails=TeacherDButil.getiItems2(status);
 			
 			request.setAttribute("itemDetails",itemDetails);
 			
-		    
+		    //pass data to the front
 			RequestDispatcher dis =request.getRequestDispatcher("TeacherReport.jsp");
 			dis.forward(request, response);
 		

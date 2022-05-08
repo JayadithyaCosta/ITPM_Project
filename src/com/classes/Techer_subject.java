@@ -1,12 +1,13 @@
 package com.classes;
 
 public class Techer_subject {
-	
+	//variable
 	private String teachername;
 	private String year;
 	private String grade;
 	private String clz;
 	private String subject;
+	//constructor
 	public Techer_subject(String teachername, String year, String grade, String clz, String subject) {
 		
 		this.teachername = teachername;
@@ -15,6 +16,7 @@ public class Techer_subject {
 		this.clz = clz;
 		this.subject = subject;
 	}
+	//getters
 	public String getTeachername() {
 		return teachername;
 	}

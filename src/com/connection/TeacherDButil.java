@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import com.classes.report;
 import com.classes.Teacher;
 import com.classes.Techer_subject;
 
@@ -92,16 +93,16 @@ public class TeacherDButil {
 	   }
 	
       }
-  catch (Exception e) {
+   catch (Exception e) {
 	e.printStackTrace();
       }
 	
 		return isSuccess;
 }
 	
-	//search valid2 function
+//search valid2 function
 	
-		public static  boolean searchvalid2(String fullname) {
+	public static  boolean searchvalid2(String fullname) {
 
 		try {	con=Dbconnection.getConnection();
 			stmt =con.createStatement();
@@ -116,7 +117,7 @@ public class TeacherDButil {
 			}
 		else {
 			isSuccess=false;
-		   }
+		     }
 		
 	      }
 	  catch (Exception e) {
@@ -126,7 +127,7 @@ public class TeacherDButil {
 			return isSuccess;
 	}	
 
-		//get search  data2 function
+//get search  data2 function
 		public static List<Techer_subject> SerchTeacher(String fullname){
 				
 				ArrayList<Techer_subject> items1 = new ArrayList<Techer_subject>();
@@ -250,11 +251,7 @@ public static boolean DeleteTeacher(String ID) {
 			else {
 				isSuccess=false;
 			}
-			
-			
-			
-			
-			
+				
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -264,64 +261,8 @@ public static boolean DeleteTeacher(String ID) {
 		return isSuccess;
 	}
 
-		
-//report generate function
-//search valid function
-
-public static  boolean Reportvalid() {
-
-	try {	con=Dbconnection.getConnection();
-		stmt =con.createStatement();
-		
-		String sql="select DISTINCT(Item_Name) as name from inventory group by Item_Name";
-		rs=stmt.executeQuery(sql);
-	
-	
-	
-	if(rs.next()) {
-		isSuccess=true;
-		}
-	else {
-		isSuccess=false;
-	   }
-	
-      }
-  catch (Exception e) {
-	e.printStackTrace();
-      }
-	
-		return isSuccess;
-}
-//report generate function
-//search valid function2
-
-public static  boolean Reportvalid1() {
-
-	try {	con=Dbconnection.getConnection();
-		stmt =con.createStatement();
-		
-		String sql="select DISTINCT(fullName) as name from teacher_details ";
-		rs=stmt.executeQuery(sql);
-	
-	
-	
-	if(rs.next()) {
-		isSuccess=true;
-		}
-	else {
-		isSuccess=false;
-	   }
-	
-    }
-catch (Exception e) {
-	e.printStackTrace();
-    }
-	
-		return isSuccess;
-}
 
 
-/*
 //get item name2
 public static List<report> getName1(){
 	
@@ -375,174 +316,7 @@ public static List<report> getName(){
 	return items;
 		
 }
-//get total 
-public static int getiIotalItem(String ItemName){
-	
-	String count = null;
-	try {
-		con=Dbconnection.getConnection();
-		stmt =con.createStatement();
-        String sql="select COUNT(Item_Name) as name from inventory where  Item_Name='"+ItemName+"'";
-		rs=stmt.executeQuery(sql);
-		
-		while(rs.next()) {
-			
-			count=rs.getString("name");
-		   
 
-			
-					
-		}
-	}
-	catch (Exception e) {
-		e.printStackTrace();
-	}
-	 int conval = Integer.parseInt(count);
-	
-	
-	return conval;
-		
-}
-//get available total
-public static int getiIotalItemAvilable(String ItemName){
-	
-	String count = null;
-	try {
-		con=Dbconnection.getConnection();
-		stmt =con.createStatement();
-        String sql="select COUNT(Item_Name) as name from inventory where  Item_Name='"+ItemName+"' and Status='Available'";
-		rs=stmt.executeQuery(sql);
-		
-		while(rs.next()) {
-			
-			count=rs.getString("name");
-		   
-
-			
-					
-		}
-	}
-	catch (Exception e) {
-		e.printStackTrace();
-	}
-	 int conval = Integer.parseInt(count);
-	
-	
-	return conval;
-		
-}
-//get using total
-public static int getiIotalItemUsing(String ItemName){
-	
-	String count = null;
-	try {
-		con=Dbconnection.getConnection();
-		stmt =con.createStatement();
-        String sql="select COUNT(Item_Name) as name from inventory where  Item_Name='"+ItemName+"' and Status='Using'";
-		rs=stmt.executeQuery(sql);
-		
-		while(rs.next()) {
-			
-			count=rs.getString("name");
-		   
-
-			
-					
-		}
-	}
-	catch (Exception e) {
-		e.printStackTrace();
-	}
-	 int conval = Integer.parseInt(count);
-	
-	
-	return conval;
-		
-}
-//get re condition count
-public static int getiIotalItemRecondition(String ItemName){
-	
-	String count = null;
-	try {
-		con=Dbconnection.getConnection();
-		stmt =con.createStatement();
-        String sql="select COUNT(Item_Name) as name from inventory where  Item_Name='"+ItemName+"' and Status='Re-condition'";
-		rs=stmt.executeQuery(sql);
-		
-		while(rs.next()) {
-			
-			count=rs.getString("name");
-		   
-
-			
-					
-		}
-	}
-	catch (Exception e) {
-		e.printStackTrace();
-	}
-	 int conval = Integer.parseInt(count);
-	
-	
-	return conval;
-		
-}
-//get broken count
-public static int getiIotalItemDiscurd(String ItemName){
-	
-	String count = null;
-	try {
-		con=Dbconnection.getConnection();
-		stmt =con.createStatement();
-        String sql="select COUNT(Item_Name) as name from inventory where  Item_Name='"+ItemName+"' and Status='Discurd'";
-		rs=stmt.executeQuery(sql);
-		
-		while(rs.next()) {
-			
-			count=rs.getString("name");
-		   
-
-			
-					
-		}
-	}
-	catch (Exception e) {
-		e.printStackTrace();
-	}
-	 int conval = Integer.parseInt(count);
-	
-	
-	return conval;
-		
-}
-public static String getitemname(String ItemName){
-	
-	String count = null;
-	try {
-		con=Dbconnection.getConnection();
-		stmt =con.createStatement();
-        String sql="select DISTINCT(Item_Name) as name from inventory where Item_Name='"+ItemName+"'";
-		rs=stmt.executeQuery(sql);
-		
-		while(rs.next()) {
-			
-			count=rs.getString("name");
-		   
-
-			
-					
-		}
-	}
-	catch (Exception e) {
-		e.printStackTrace();
-	}
-	 
-	
-	
-	return count;
-		
-}
-*/
 //report genarate function
 public static List<Teacher> getiItems2(String Status){
 	
@@ -616,6 +390,33 @@ public static List<Teacher> getiItems4(String TeacherName){
 	
 	return items;
 		
+}
+//report generate function
+//search valid function2
+
+public static  boolean Reportvalid1() {
+
+	try {	con=Dbconnection.getConnection();
+		stmt =con.createStatement();
+		
+		String sql="select DISTINCT(fullName) as name from teacher_details ";
+		rs=stmt.executeQuery(sql);
+	
+	
+	
+	if(rs.next()) {
+		isSuccess=true;
+		}
+	else {
+		isSuccess=false;
+	   }
+	
+  }
+catch (Exception e) {
+	e.printStackTrace();
+  }
+	
+		return isSuccess;
 }
 
 

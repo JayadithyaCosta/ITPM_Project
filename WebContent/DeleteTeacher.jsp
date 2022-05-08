@@ -62,13 +62,10 @@ background-color: white;
 		
 			<div class="company_name">
 
-	<h3 style="margin-left:300px"><span> Teacher </span><span> Management </span></h3>
+	         <h3 style="margin-left:300px"><span> Teacher </span><span> Management </span></h3>
+            </div>
 
-	</div>
 
-	<!-- <div class="logout">
-	<a href="login.jsp" class="logout_btn"></a>
-	</div>-->
 			
 		</header>
 			
@@ -77,7 +74,7 @@ background-color: white;
 				<img src="css/logo.jpeg" class="user_type" alt="">
 			</center>
 			
-			<a href="Home.jsp"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
+			<a href="index.jsp"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
 			<a href="Addteacher.jsp"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Teacher</span></a>
 			<a href="searchTeacher.jsp"><i class="fa fa-search" aria-hidden="true"></i><span>Search Teacher Details</span></a>
 			<a href="DBrefresh.jsp"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Subject to Teacher</span></a>
@@ -104,49 +101,36 @@ background-color: white;
 	<table id="deletetable">
 	<tr>    
 			<td >TeacherId:</td>
-			<td><input type="text" name="ID" id="input" value="<%= id  %>" readonly id="td1">
-			
-			</td>
-		</tr>
-	    <tr id="trup">
+			<td><input type="text" name="ID" id="input" value="<%= id  %>" readonly id="td1"></td>
+	</tr>
+	<tr id="trup">
 			<td>Name:</td>
-			<td><input type="text" name="IName" value="<%= fullname %>" readonly id="td1">
-			
-			</td>
-		</tr>
-		<tr>
+			<td><input type="text" name="IName" value="<%= fullname %>" readonly id="td1"></td>
+	</tr>
+	<tr>
 			<td>Address:</td>
 			<td><input type="text" name="Icode" value="<%= adress  %>" readonly id="td1"></td>
-		</tr>
-		<tr id="trup">
+	</tr>
+	<tr id="trup">
 			
 			<td>Gender:</td>
-			<td>
-			<input type="text" name="Categorey" value="<%= gender %>" readonly id="td1">
-           
-            </td> 
+			<td><input type="text" name="Categorey" value="<%= gender %>" readonly id="td1"></td> 
 
-		</tr>
-		<tr id="trup">
+	</tr>
+	<tr id="trup">
 			
 			<td>DoB:</td>
-			<td>
-			<input type="text" name="Categorey" value="<%= dob %>" readonly id="td1">
-           
-            </td> 
+			<td><input type="text" name="Categorey" value="<%= dob %>" readonly id="td1"></td> 
 
-		</tr>
-		<tr>
+	</tr>
+	<tr>
 		<td>NIC:</td>
 		<td><input type="text" name="Description" value="<%= nic %>" readonly id="td1"></td>
 	</tr>
 	<tr id="trup">
 		
 		<td>Phone:</td>
-		<td>
-		<input type="text" name="Status" value="<%= phone %>" readonly id="td1">
-            
-		</td>
+		<td><input type="text" name="Status" value="<%= phone %>" readonly id="td1"></td>
 	</tr>
 	
 	<tr>
@@ -165,14 +149,14 @@ background-color: white;
 		<td>Descrption:</td>
 		<td><input type="text" name="Date" value="<%= status %>" readonly id="td1"></td>
 	</tr>	
-	</table>
+ </table>
    </div>	
 	
 	<br>
 	<div class="btn1">
-	<input type="submit" name="submit" value="Delete" style="background-color: red">
+	   <input type="submit" name="submit" value="Delete" style="background-color: red">
 	</div>
-	</form>
+</form>
 </div>	
 
 

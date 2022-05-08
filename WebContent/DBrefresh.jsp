@@ -40,7 +40,7 @@ margin-left: 350px;
 				<img src="css/logo.jpeg" class="user_type" alt="">
 			</center>
 			
-			<a href="Home.jsp"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
+			<a href="index.jsp"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
 			<a href="Addteacher.jsp"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Teacher</span></a>
 			<a href="searchTeacher.jsp"><i class="fa fa-search" aria-hidden="true"></i><span>Search Teacher Details</span></a>
 			<a href="DBrefresh.jsp"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Subject to Teacher</span></a>
@@ -64,12 +64,12 @@ margin-left: 350px;
 		  			
 
 <form action="Addsubservlet" method="post" >
-              <center>
-				<img src="css/itp click.jpg" class="user_type" width="125px">
-			</center>
-<div class="btn1">
-<input type="submit" name="submit" value="Refresh Database" id="btnsubmit">
-</div>
+       <center>
+		  <img src="css/itp click.jpg" class="user_type" width="125px">
+	   </center>
+  <div class="btn1">
+      <input type="submit" name="submit" value="Refresh Database" id="btnsubmit">
+  </div>
 </form>
 </div>
 

@@ -26,6 +26,7 @@ public class SearchTeacherservlet extends HttpServlet {
 		PrintWriter out =response.getWriter();
 		response.setContentType("text/html");
 		
+		//store front end pass value to variable
 		String TeacherName=request.getParameter("TName");
 		String Status=request.getParameter("Status");
 		
@@ -34,9 +35,11 @@ public class SearchTeacherservlet extends HttpServlet {
 		
 		istrue=TeacherDButil.searchvalid(TeacherName,Status);
 		if(istrue==true) {
+			//call function and get Db data
 			try{List<Teacher> itemDetails=TeacherDButil.getTeacher(TeacherName,Status);
 			request.setAttribute("itemDetails",itemDetails);
 			}
+			
 			catch (Exception e) {
 				e.printStackTrace();
 			}

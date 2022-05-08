@@ -23,11 +23,13 @@ public class Addsubservlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out =response.getWriter();
 		response.setContentType("text/html");
+		//catch front end passed value
 		String ItemName=request.getParameter("ItemName");
 		
 		
 	boolean istrue;
 		
+	    //call reportvalid function
 		istrue=TeacherDButil.Reportvalid1();
 		if(istrue==true) {
 			

@@ -19,7 +19,8 @@ public class Addsubjectservlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out =response.getWriter();
 		response.setContentType("text/html");
-	
+	    
+		//catch front end passed value
 		String teachername = request.getParameter("Tname");
 		String year=request.getParameter("year");
 		String grade=request.getParameter("grade");
@@ -32,7 +33,7 @@ public class Addsubjectservlet extends HttpServlet {
 		
 		
 		 boolean isTrue;
-			
+			//call Insertitem2 function
 			isTrue = TeacherDButil.insertitem2(teachername,year,grade,clz,subject);
 			
 			if(isTrue == true) {

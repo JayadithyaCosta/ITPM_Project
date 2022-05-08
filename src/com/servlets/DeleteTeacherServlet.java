@@ -22,9 +22,11 @@ public class DeleteTeacherServlet extends HttpServlet {
 		PrintWriter out =response.getWriter();
 		response.setContentType("text/html");
 		
+		//store front end pass value to variable
 		String ItemNo=request.getParameter("ID");
 		boolean isTrue;
 		
+		//call Delete function
 		isTrue=TeacherDButil.DeleteTeacher(ItemNo);
 		
 		if(isTrue==true) {

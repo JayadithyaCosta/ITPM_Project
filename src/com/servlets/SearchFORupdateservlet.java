@@ -25,11 +25,13 @@ public class SearchFORupdateservlet extends HttpServlet {
 		PrintWriter out =response.getWriter();
 		response.setContentType("text/html");
 		
+		//store front end pass value to variable
 		String itemName=request.getParameter("TName");
 		String Status=request.getParameter("Status");
 		
 		boolean istrue;
 		
+		//call serch validation function and getdata function
 		istrue=TeacherDButil.searchvalid(itemName,Status);
 		if(istrue==true) {
 			List<Teacher> itemDetails=TeacherDButil.getTeacher(itemName,Status);

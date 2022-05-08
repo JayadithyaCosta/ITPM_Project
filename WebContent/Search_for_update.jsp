@@ -51,6 +51,10 @@ padding-left: 10%"
 margin-left: 350px;
 
 } 
+#txtinput:focus {
+  background-color: #e7feff;
+  border-radius: 5px;
+}
 
   
 
@@ -65,23 +69,25 @@ margin-left: 350px;
 			<label for="nav_animation">
 			<i class="fas fa-bars" id="sidebar_btn"></i>
 			</label>
-		
-			<div class="company_name" id="h3ID">
 
-		       <h3 id="h3ID"><span> Teacher </span><span> Management </span></h3>
-	
-	        </div>
+		<div class="company_name" id="h3ID">
 
-	
-			
-		</header>
+			<h3 id="h3ID">
+				<span> Teacher </span><span> Management </span>
+			</h3>
+
+		</div>
+
+
+
+	</header>
 			
 			<div class="sidenav">
 			<center>
 				<img src="css/logo.jpeg" class="user_type" alt="">
 			</center>
 			
-			<a href="Home.jsp"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
+			<a href="index.jsp"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
 			<a href="Addteacher.jsp"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Teacher</span></a>
 			<a href="searchTeacher.jsp"><i class="fa fa-search" aria-hidden="true"></i><span>Search Teacher Details</span></a>
 			<a href="DBrefresh.jsp"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Subject to Teacher</span></a>
@@ -111,7 +117,7 @@ margin-left: 350px;
        <tr >
             <td>
              <div class="input_field">
-             <label>Teacher name</label><input type="text" name="TName" placeholder="enter Teacher name" >
+             <label>Teacher name</label><input type="text" name="TName" placeholder="enter Teacher name" id="txtinput">
              </div>
              
             </td>
@@ -119,7 +125,7 @@ margin-left: 350px;
              <td>
              <div style="margin-left: 50px">
              <label for="assing">Status</label>
-              <select name="Status">
+              <select name="Status" id="txtinput">
                <option value="Active">Active</option>
                <option value="Inactive">Inactive</option>
               </select>

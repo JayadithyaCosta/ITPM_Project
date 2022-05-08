@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class Dbconnection {
 	
-	
+	//parameter variable for getconnection function
 	private static String url = "jdbc:mysql://localhost:3306/school";
 	private static String userName = "root";
 	private static String password = "Udesh@1975";
