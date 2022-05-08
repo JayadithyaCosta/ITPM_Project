@@ -132,7 +132,7 @@ margin-left: 80px;
 		</tr>
 		<tr>
 			<td>Phone</td>
-			<td><input type="text" name="phone" value="<%= phone  %>"   id="td1"></td>
+			<td><input type="text" name="phone" value="<%= phone  %>"   id="td1" pattern="[0-9]{1}[0-9]{9}"></td>
 		</tr>
 		<tr>
 			<td>JoinDate</td>
