@@ -11,6 +11,7 @@
 <!-- <script type="text/javascript" src="js.js"></script>  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 
+
 <link rel="stylesheet" href="css/exams.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 
@@ -83,13 +84,22 @@ border-radius: 8px;
 	
 	
 	<input type="submit" name="submit" value="View" id="viewbtn">
+		
 	</div>
 	</form>
 	</div>
 	
 	<!-- <div id="report" style="margin-left:0%;padding-left:0px;padding-right: 20px"> -->
 	<div id="reporttableBox">
+	
+	<center><img src="css/MicrosoftTeams-image.png" class="user_type" alt="" style="height:50px;weight:100px" ></center>
+	
+	<h5 align="center">Student List</h5><br>	
 	<table id="ReportTable">
+		<tr align="left">
+		<p id="demo" name="demo"></p>
+		</tr>
+		<tr></tr>
 		<tr>
 		<th>Index Number</th>
 		<th>Student ID</th>
@@ -132,12 +142,20 @@ border-radius: 8px;
 	
 	<br><br>
 	<%-- <center><button onclick="generatePDF()" style="background-color: blue; width: 180px;height: 40px;color: white;border-radius: 4px">Download Report </button> </center> --%>
-	<input type="submit" onclick="generatePDF()" name="download" value="Download Report" class="btn btn-success" id="downloadreportbtn">
+	<input type="submit" onclick="generatePDF(); myFunction()" name="download" value="Download Report" class="btn btn-success" id="downloadreportbtn">
+	
+	<script>
+	function myFunction() {
+	document.getElementById("ReportTable").action="/Student_Management/src/com/student/SearchStudentReportServlet.java"
+	var x = document.getElementById("ReportTable").rows.length-3;
+	document.getElementById("demo").innerHTML = "Student Amount : " + x + "";
+}
+</script>
 	
 	<script>
 	function generatePDF(){
-var element = document.getElementById('reporttableBox');
-var opt = {
+	var element = document.getElementById('reporttableBox');
+	var opt = {
   margin:       1,
   filename:     'StudentReport.pdf',
   image:        { type: 'jpeg', quality: 0.98 },
