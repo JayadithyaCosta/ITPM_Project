@@ -202,7 +202,6 @@
 			</script>
 		</div>
 	</div>
-	<input type="submit" onclick="generatePDF()" name="download"
-		value="Download Report" class="btn btn-success" id="downloadreportbtn">
+	<input type="submit" onclick="generatePDF()" name="download" value="Download Report" class="btn btn-success" id="downloadreportbtn">
 </body>
 </html>
