@@ -67,7 +67,7 @@ border-radius: 8px;
  <form action="StudentInsert" method="post">
          <div class="input_field" id="input_field">       
         Student ID        
-        <input type="text" name="name" id="txtinput" required><br><br>
+        <input type="text" name="name" id="txtinput" pattern="[S][0-9][0-9][0-9]" placeholder="SXXX" required><br><br>
         Full Name
         <input type="text" name="sid" id="txtinput" required><br><br>
         Date Of Birth 
