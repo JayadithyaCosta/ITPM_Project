@@ -1,33 +1,35 @@
 package com.connection;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 
-public class Dbconnection {
-	
-	//parameter variable for getconnection function
-	private static String url = "jdbc:mysql://localhost:3306/school";
-	private static String userName = "root";
-	private static String password = "Udesh@1975";
-	private static Connection con;
 
-	public static Connection getConnection() {
+public class DBconnection {
+	//connect to database
+		private static String url = "jdbc:mysql://localhost:3306/sms";
+		private static String userName = "root";
+		private static String password = "root";
 		
-		try {
-			
-			Class.forName("com.mysql.jdbc.Driver");
-			
-			con = DriverManager.getConnection(url, userName, password);
-			
-		}
-		catch (Exception e) {
-			System.out.println("Database connection is not success!!!");
-		}
+		//save the connection to the variable
 		
-		return con;
+		private static Connection con;
+		
+		//connectivity method
+		public static Connection getConnection() {
+			try {
+				
+				//create  a Driver
+				Class.forName("com.mysql.jdbc.Driver");
+				
+				con=DriverManager.getConnection(url,userName,password);
+				System.out.println("DB CONNECTED!");
+				
+			}catch(Exception e){
+				System.out.println("Database connection is not succesful");
+			}
+			return con; //return connection type object
+		}
+
+
 	}
-
-}
-
-
-
