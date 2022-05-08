@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import com.classes.report;
 import com.classes.Teacher;
 import com.classes.Techer_subject;
 
@@ -26,7 +27,7 @@ public class TeacherDButil {
 			try {
 	    		
 				
-				con=DBconnection.getConnection();
+				con=Dbconnection.getConnection();
 				stmt =con.createStatement();
 				String sql = "insert into teacher_details values (0,'"+fullname+"','"+adress+"','"+gender+"','"+dob+"','"+nic+"','"+phone+"','"+joindate+"','"+Qualification+"','"+discription+"','"+Status+"',now())";
 				int rs = stmt.executeUpdate(sql);
@@ -53,7 +54,7 @@ public class TeacherDButil {
 		try {
     		
 			
-			con=DBconnection.getConnection();
+			con=Dbconnection.getConnection();
 			stmt =con.createStatement();
 			String sql = "insert into teacher_subject values (0,'"+teachername+"','"+year+"','"+grade+"','"+clz+"','"+subject+"')";
 			int rs = stmt.executeUpdate(sql);
@@ -76,7 +77,7 @@ public class TeacherDButil {
 	
 	public static  boolean searchvalid(String fullname,String Status) {
 
-	try {	con=DBconnection.getConnection();
+	try {	con=Dbconnection.getConnection();
 		stmt =con.createStatement();
 		
 		String sql="select * from teacher_details where fullName LIKE '"+fullname+"%' OR status LIKE '%"+Status+"%'";
@@ -92,18 +93,18 @@ public class TeacherDButil {
 	   }
 	
       }
-  catch (Exception e) {
+   catch (Exception e) {
 	e.printStackTrace();
       }
 	
 		return isSuccess;
 }
 	
-	//search valid2 function
+//search valid2 function
 	
-		public static  boolean searchvalid2(String fullname) {
+	public static  boolean searchvalid2(String fullname) {
 
-		try {	con=DBconnection.getConnection();
+		try {	con=Dbconnection.getConnection();
 			stmt =con.createStatement();
 			
 			String sql="select * from teacher_subject where teachername LIKE '"+fullname+"%'";
@@ -116,7 +117,7 @@ public class TeacherDButil {
 			}
 		else {
 			isSuccess=false;
-		   }
+		     }
 		
 	      }
 	  catch (Exception e) {
@@ -126,13 +127,13 @@ public class TeacherDButil {
 			return isSuccess;
 	}	
 
-		//get search  data2 function
+//get search  data2 function
 		public static List<Techer_subject> SerchTeacher(String fullname){
 				
 				ArrayList<Techer_subject> items1 = new ArrayList<Techer_subject>();
 				
 				try {
-					con=DBconnection.getConnection();
+					con=Dbconnection.getConnection();
 					stmt =con.createStatement();
 			        String sql=" select * from teacher_subject where teachername LIKE '"+fullname+"%' order by subject";
 					rs=stmt.executeQuery(sql);
@@ -144,11 +145,6 @@ public class TeacherDButil {
 						String grade=rs.getString(4);
 						String clz=rs.getString(5);
 						String subject=rs.getString(6);
-						
-
-
-
-
 						
 						Techer_subject itm = new Techer_subject(fullname1,year,grade,clz,subject);
 						items1.add(itm);
@@ -163,13 +159,13 @@ public class TeacherDButil {
 					
 			}
 					
-//get search  data function
+//get search teacher  data function
 public static List<Teacher> getTeacher(String fullname,String Status){
 		
 		ArrayList<Teacher> items = new ArrayList<Teacher>();
 		
 		try {
-			con=DBconnection.getConnection();
+			con=Dbconnection.getConnection();
 			stmt =con.createStatement();
 	        String sql=" select * from teacher_details where fullName LIKE '"+fullname+"%' AND status LIKE '%"+Status+"%' order by gender";
 			rs=stmt.executeQuery(sql);
@@ -212,7 +208,7 @@ public static List<Teacher> getTeacher(String fullname,String Status){
 		
 		int ItemNO1=Integer.parseInt(id);
 		try {
-			con=DBconnection.getConnection();
+			con=Dbconnection.getConnection();
 			stmt =con.createStatement();
 			String sql ="update teacher_details set  fullname='"+fullname+"', address='"+adress+"',gender='"+gender+"',dob='"+dob+"',nic='"+nic+"',phone='"+phone+"',joinDate='"+joindate+"',qualification='"+qulification+"',status='"+status+"',description='"+discrption+"'"+"where id ='"+ItemNO1+"'";
 			int rs=stmt.executeUpdate(sql);
@@ -238,7 +234,7 @@ public static List<Teacher> getTeacher(String fullname,String Status){
 public static boolean DeleteTeacher(String ID) {
 		int conIno=Integer.parseInt(ID);
 		try {
-			con=DBconnection.getConnection();
+			con=Dbconnection.getConnection();
 			stmt =con.createStatement();
 			String sql= "delete from teacher_details where id='"+conIno+"'";
 			int rs=stmt.executeUpdate(sql);
@@ -250,11 +246,7 @@ public static boolean DeleteTeacher(String ID) {
 			else {
 				isSuccess=false;
 			}
-			
-			
-			
-			
-			
+				
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -264,71 +256,15 @@ public static boolean DeleteTeacher(String ID) {
 		return isSuccess;
 	}
 
-		
-//report generate function
-//search valid function
-
-public static  boolean Reportvalid() {
-
-	try {	con=DBconnection.getConnection();
-		stmt =con.createStatement();
-		
-		String sql="select DISTINCT(Item_Name) as name from inventory group by Item_Name";
-		rs=stmt.executeQuery(sql);
-	
-	
-	
-	if(rs.next()) {
-		isSuccess=true;
-		}
-	else {
-		isSuccess=false;
-	   }
-	
-      }
-  catch (Exception e) {
-	e.printStackTrace();
-      }
-	
-		return isSuccess;
-}
-//report generate function
-//search valid function2
-
-public static  boolean Reportvalid1() {
-
-	try {	con=DBconnection.getConnection();
-		stmt =con.createStatement();
-		
-		String sql="select DISTINCT(fullName) as name from teacher_details ";
-		rs=stmt.executeQuery(sql);
-	
-	
-	
-	if(rs.next()) {
-		isSuccess=true;
-		}
-	else {
-		isSuccess=false;
-	   }
-	
-    }
-catch (Exception e) {
-	e.printStackTrace();
-    }
-	
-		return isSuccess;
-}
 
 
-/*
 //get item name2
 public static List<report> getName1(){
 	
 	ArrayList<report> items = new ArrayList<report>();
 	
 	try {
-		con=DBconnection.getConnection();
+		con=Dbconnection.getConnection();
 		stmt =con.createStatement();
      String sql=" select DISTINCT(fullName) as name from teacher_details";
 		rs=stmt.executeQuery(sql);
@@ -355,7 +291,7 @@ public static List<report> getName(){
 	ArrayList<report> items = new ArrayList<report>();
 	
 	try {
-		con=DBconnection.getConnection();
+		con=Dbconnection.getConnection();
 		stmt =con.createStatement();
         String sql=" select DISTINCT(Item_Name) as name from inventory";
 		rs=stmt.executeQuery(sql);
@@ -375,181 +311,14 @@ public static List<report> getName(){
 	return items;
 		
 }
-//get total 
-public static int getiIotalItem(String ItemName){
-	
-	String count = null;
-	try {
-		con=DBconnection.getConnection();
-		stmt =con.createStatement();
-        String sql="select COUNT(Item_Name) as name from inventory where  Item_Name='"+ItemName+"'";
-		rs=stmt.executeQuery(sql);
-		
-		while(rs.next()) {
-			
-			count=rs.getString("name");
-		   
 
-			
-					
-		}
-	}
-	catch (Exception e) {
-		e.printStackTrace();
-	}
-	 int conval = Integer.parseInt(count);
-	
-	
-	return conval;
-		
-}
-//get available total
-public static int getiIotalItemAvilable(String ItemName){
-	
-	String count = null;
-	try {
-		con=DBconnection.getConnection();
-		stmt =con.createStatement();
-        String sql="select COUNT(Item_Name) as name from inventory where  Item_Name='"+ItemName+"' and Status='Available'";
-		rs=stmt.executeQuery(sql);
-		
-		while(rs.next()) {
-			
-			count=rs.getString("name");
-		   
-
-			
-					
-		}
-	}
-	catch (Exception e) {
-		e.printStackTrace();
-	}
-	 int conval = Integer.parseInt(count);
-	
-	
-	return conval;
-		
-}
-//get using total
-public static int getiIotalItemUsing(String ItemName){
-	
-	String count = null;
-	try {
-		con=DBconnection.getConnection();
-		stmt =con.createStatement();
-        String sql="select COUNT(Item_Name) as name from inventory where  Item_Name='"+ItemName+"' and Status='Using'";
-		rs=stmt.executeQuery(sql);
-		
-		while(rs.next()) {
-			
-			count=rs.getString("name");
-		   
-
-			
-					
-		}
-	}
-	catch (Exception e) {
-		e.printStackTrace();
-	}
-	 int conval = Integer.parseInt(count);
-	
-	
-	return conval;
-		
-}
-//get re condition count
-public static int getiIotalItemRecondition(String ItemName){
-	
-	String count = null;
-	try {
-		con=DBconnection.getConnection();
-		stmt =con.createStatement();
-        String sql="select COUNT(Item_Name) as name from inventory where  Item_Name='"+ItemName+"' and Status='Re-condition'";
-		rs=stmt.executeQuery(sql);
-		
-		while(rs.next()) {
-			
-			count=rs.getString("name");
-		   
-
-			
-					
-		}
-	}
-	catch (Exception e) {
-		e.printStackTrace();
-	}
-	 int conval = Integer.parseInt(count);
-	
-	
-	return conval;
-		
-}
-//get broken count
-public static int getiIotalItemDiscurd(String ItemName){
-	
-	String count = null;
-	try {
-		con=DBconnection.getConnection();
-		stmt =con.createStatement();
-        String sql="select COUNT(Item_Name) as name from inventory where  Item_Name='"+ItemName+"' and Status='Discurd'";
-		rs=stmt.executeQuery(sql);
-		
-		while(rs.next()) {
-			
-			count=rs.getString("name");
-		   
-
-			
-					
-		}
-	}
-	catch (Exception e) {
-		e.printStackTrace();
-	}
-	 int conval = Integer.parseInt(count);
-	
-	
-	return conval;
-		
-}
-public static String getitemname(String ItemName){
-	
-	String count = null;
-	try {
-		con=DBconnection.getConnection();
-		stmt =con.createStatement();
-        String sql="select DISTINCT(Item_Name) as name from inventory where Item_Name='"+ItemName+"'";
-		rs=stmt.executeQuery(sql);
-		
-		while(rs.next()) {
-			
-			count=rs.getString("name");
-		   
-
-			
-					
-		}
-	}
-	catch (Exception e) {
-		e.printStackTrace();
-	}
-	 
-	
-	
-	return count;
-		
-}
-*/
 //report genarate function
 public static List<Teacher> getiItems2(String Status){
 	
 	ArrayList<Teacher> items = new ArrayList<Teacher>();
 	
 	try {
-		con=DBconnection.getConnection();
+		con=Dbconnection.getConnection();
 		stmt =con.createStatement();
         String sql=" select * from teacher_details where  status LIKE '%"+Status+"%' ORDER BY gender";
 		rs=stmt.executeQuery(sql);
@@ -586,7 +355,7 @@ public static List<Teacher> getiItems4(String TeacherName){
 	ArrayList<Teacher> items = new ArrayList<Teacher>();
 	
 	try {
-		con=DBconnection.getConnection();
+		con=Dbconnection.getConnection();
 		stmt =con.createStatement();
       String sql=" select * from teacher_details where  fullName LIKE '%"+TeacherName+"%' ORDER BY gender";
 		rs=stmt.executeQuery(sql);
@@ -616,6 +385,33 @@ public static List<Teacher> getiItems4(String TeacherName){
 	
 	return items;
 		
+}
+//report generate function
+//search valid function2
+
+public static  boolean Reportvalid1() {
+
+	try {	con=Dbconnection.getConnection();
+		stmt =con.createStatement();
+		
+		String sql="select DISTINCT(fullName) as name from teacher_details ";
+		rs=stmt.executeQuery(sql);
+	
+	
+	
+	if(rs.next()) {
+		isSuccess=true;
+		}
+	else {
+		isSuccess=false;
+	   }
+	
+  }
+catch (Exception e) {
+	e.printStackTrace();
+  }
+	
+		return isSuccess;
 }
 
 
