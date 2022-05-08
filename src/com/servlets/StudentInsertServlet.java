@@ -49,9 +49,14 @@ public class StudentInsertServlet extends HttpServlet {
 			
 		}
 		else {
-			RequestDispatcher dis2 = request.getRequestDispatcher("unsuccess.jsp");
-			dis2.forward(request, response);
-		
+			/*
+			 * RequestDispatcher dis2 = request.getRequestDispatcher("unsuccess.jsp");
+			 * dis2.forward(request, response);
+			 */
+			out.println("<script type='text/javascript'>");
+			out.println("alert('Unsuccessful!');");
+			out.println("location='studentinsert.jsp'");
+			out.println("</script>");
 	}
 
 	}}
