@@ -146,11 +146,6 @@ public class TeacherDButil {
 						String clz=rs.getString(5);
 						String subject=rs.getString(6);
 						
-
-
-
-
-						
 						Techer_subject itm = new Techer_subject(fullname1,year,grade,clz,subject);
 						items1.add(itm);
 								
@@ -164,7 +159,7 @@ public class TeacherDButil {
 					
 			}
 					
-//get search  data function
+//get search teacher  data function
 public static List<Teacher> getTeacher(String fullname,String Status){
 		
 		ArrayList<Teacher> items = new ArrayList<Teacher>();
