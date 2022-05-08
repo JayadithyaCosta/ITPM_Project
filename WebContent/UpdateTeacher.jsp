@@ -128,7 +128,7 @@ margin-left: 80px;
 		</tr>
 		<tr>
 			<td>NIC</td>
-			<td><input type="text" name="nic" value="<%= nic  %>"   id="td1"></td>
+			<td><input type="text" name="nic" value="<%= nic  %>"   id="td1" pattern="^(?:19|20)?\d{2}[0-9]{10}|[0-9]{9}[x|X|v|V]$"></td>
 		</tr>
 		<tr>
 			<td>Phone</td>
