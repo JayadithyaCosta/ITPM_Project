@@ -25,12 +25,15 @@ public class searchsubject extends HttpServlet {
 		PrintWriter out =response.getWriter();
 		response.setContentType("text/html");
 		
+		//store front end pass value to variable
 		String TeacherName=request.getParameter("TName");
 		
 		boolean istrue1;
 		istrue1=TeacherDButil.searchvalid2(TeacherName);
 		
 		if(istrue1==true) {
+			
+			//call Search teacher function
 			try{List<Techer_subject> itemDetails1=TeacherDButil.SerchTeacher(TeacherName);
 			request.setAttribute("itemDetails1",itemDetails1);
 			}

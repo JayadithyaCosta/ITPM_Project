@@ -1,6 +1,7 @@
 package com.classes;
 
 public class Teacher {
+	//VARIABLE
 	private int id;
 	private String fullname;
 	private String adress;
@@ -13,6 +14,8 @@ public class Teacher {
 	private String status;
 	private String discrption;
 	private String systemadddate;
+	
+	//Constructor
 	public Teacher(int id, String fullname, String adress, String gender, String dob, String nic, String phone,
 			String joindate, String qulification, String status, String discrption, String systemadddate) {
 		
@@ -29,6 +32,7 @@ public class Teacher {
 		this.discrption = discrption;
 		this.systemadddate = systemadddate;
 	}
+	//getters
 	public int getId() {
 		return id;
 	}

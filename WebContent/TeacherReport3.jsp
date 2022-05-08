@@ -90,7 +90,7 @@
 			},
 			jsPDF : {
 				unit : 'mm',
-				format : 'ledger',
+				format : 'government-letter',
 				orientation : 'landscape'
 			}
 		};
@@ -100,91 +100,21 @@
 </script>
 </head>
 <body>
-	<input type="checkbox" id="nav_animation">
 
-
-	<header>
-
-		<label for="nav_animation"> <i class="fas fa-bars"
-			id="sidebar_btn"></i>
-		</label>
-
-		<div class="company_name" id="h3ID">
-
-			<h3 id="h3ID">
-				<span> Teacher </span><span> Management </span>
-			</h3>
-		</div>
-
-		<!-- <div class="logout">
-	<a href="login.jsp" class="logout_btn"></a>
-	</div>-->
-
-	</header>
-
-	<div class="sidenav">
-		<center>
-			<img src="css/logo.jpeg" class="user_type" alt="">
-		</center>
-
-		
-		<a href="index.jsp"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
-		<a href="Addteacher.jsp"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Teacher</span></a> 
-		<a href="searchTeacher.jsp"><i class="fa fa-search"aria-hidden="true"></i><span>Search Teacher Details</span></a>
-		<a href="DBrefresh.jsp"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Subject to Teacher</span></a>
-		<a href="searchSubject.jsp"><i class="fa fa-search" aria-hidden="true"></i><span>Search Assign Subject</span></a>
-		<a href="Search_for_update.jsp"><i class="fas fa-wrench" aria-hidden="true"></i><span>Update Teacher Info</span></a>
-		<a href="TeacherReport.jsp"><i class="fa fa-folder"aria-hidden="true"></i><span>Teacher Report</span></a> 
-		<a href="TeacherReport2.jsp"><i class="fa fa-address-card"aria-hidden="true"></i><span>Individual Teacher Report</span></a>
-
-
-	</div>
-
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-
-
-
-	<div class="wrapper" id="wrapper">
-
-
-
-		<form action="TeacherReportservlet2" method="post">
-
-			<table style="margin-left: 100px">
-				<tr>
-
-					<td>
-						<div class="input_field">
-							<label>Teacher Name</label><input type="text" name="TeacherName"
-								placeholder="enter item name" id="txtinput">
-						</div>
-					<td>
-				</tr>
-			</table>
-
-			<div class="btn1">
-				<input type="submit" name="submit" value="view Report"
-					id="btnsubmit">
-			</div>
-		</form>
-	</div>
-
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
 
 	<div id="reporttableBox2">
 
-		<table style="margin-left: 18%; width: 80%; padding-left: 10%"
+		<center>
+			<img src="logos/reportlogo (2).png" class="user_type" alt=""
+				style="margin-left: 60px">
+		</center>
+		<center>
+			<h2 style="margin-left: 50px;">Personal Teacher Report</h2>
+		</center>
+
+
+
+		<table style="margin-left: 10%; width: 80%; padding-left: 10%"
 			id="ReportTable">
 
 			<th>Teacher details</th>
@@ -257,13 +187,21 @@
 				</table>
 			</td>
 			</tr>
-			<!--  <tr>
-    <td><a  href="DownloadReport.jsp"><button style="background-color: blue; width: 180px;height: 40px;color: white;border-radius: 4px">Download Report pdf </button></a> </td>
-</tr>
--->
+
 		</table>
+		<label style="margin-left: 160px">This Report Genarated In:</label>
+		<div id="current_date" style="margin-left: 160px">
+			<script>
+				var today = new Date();
+				var date = today.getFullYear() + '-' + (today.getMonth() + 1)
+						+ '-' + today.getDate();
+				var time = today.getHours() + ":" + today.getMinutes() + ":"
+						+ today.getSeconds();
+				var dateTime = date + ' Time- ' + time;
+				document.getElementById("current_date").innerHTML = dateTime;
+			</script>
+		</div>
 	</div>
-	<input type="submit" onclick="generatePDF()" name="download"
-		value="Download Report" class="btn btn-success" id="downloadreportbtn">
+	<input type="submit" onclick="generatePDF()" name="download" value="Download Report" class="btn btn-success" id="downloadreportbtn">
 </body>
 </html>

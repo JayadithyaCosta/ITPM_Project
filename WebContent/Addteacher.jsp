@@ -59,7 +59,6 @@ function CheckColors(val){
    element.style.display='none';
 }
 
-
 </script>
 
 
@@ -80,15 +79,13 @@ function CheckColors(val){
 	             <h3 id ="h3ID"><span> Teacher </span><span> Management </span></h3>
 
 	        </div>
-
 	
-			
 		</header>
 			
 			<div class="sidenav">
 		     <img src="css/logo.jpeg" class="user_type" alt="">
         
-			<a href="Home.jsp"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
+			<a href="index.jsp"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
 			<a href="Addteacher.jsp"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Teacher</span></a>
 			<a href="searchTeacher.jsp"><i class="fa fa-search" aria-hidden="true"></i><span>Search Teacher Details</span></a>
 			<a href="DBrefresh.jsp"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Subject to Teacher</span></a>
@@ -117,10 +114,10 @@ function CheckColors(val){
 			<div class="input_field" id="input_field">
 			
 			
-			<label class="required">Full name :</label><input type="text"  name="Full_name" id="txtinput"  required><br/></br>
-			<label class="required">Address :</label><input type="text" name="Address" id="txtinput" required><br/>
+			 <label class="required">Full name :</label><input type="text"  name="Full_name" id="txtinput"  required><br/></br>
+			 <label class="required">Address :</label><input type="text" name="Address" id="txtinput" required><br/>
 			
-			<label class="required">Date Of Birth :</label><input type="date" name="DoB" id="txtinput1" required><br/>
+			 <label class="required">Date Of Birth :</label><input type="date" name="DoB" id="txtinput1" required><br/>
 			
 			</div>
 		    <label for="assing" class="required" >Gender:</label>
@@ -134,34 +131,34 @@ function CheckColors(val){
 			<br/>
 			
 			<div class="input_field" id="input_field">
-			<label class="required">NIC :</label><input type="text"  name="nic" id="txtinput"  placeholder="EX:980313301V"  pattern="^(?:19|20)?\d{2}[0-9]{10}|[0-9]{9}[x|X|v|V]$" required><br/></br>
-			<label class="required">Phone :</label><input type="text" name="phone" id="txtinput" pattern="[0-9]{1}[0-9]{9}" placeholder="EX:071xxxxxxx" title="phone number incorrect or not correct format"required><br/>
-			<label class="required">Join Date :</label>
-			<input type="date" name="joindate" id="txtinput1" required><br/>
+			 <label class="required">NIC :</label><input type="text"  name="nic" id="txtinput"  placeholder="EX:980313301V"  pattern="^(?:19|20)?\d{2}[0-9]{10}|[0-9]{9}[x|X|v|V]$" required><br/></br>
+			 <label class="required">Phone :</label><input type="text" name="phone" id="txtinput" pattern="[0-9]{1}[0-9]{9}" placeholder="EX:071xxxxxxx" title="phone number incorrect or not correct format"required><br/>
+			 <label class="required">Join Date :</label>
+			 <input type="date" name="joindate" id="txtinput1" required><br/>
 			</div>
 			 
 			 <label for="assing" class="required" >Qualification:</label>
-            <select name="Qualification" class="form-control" onchange='CheckColors(this.value);' required>
-              <option value=" "disabled selected hidden >Select Qualification </option>
-              <option value="Bachelor of Teaching (Primary Education)">Bachelor of Teaching (Primary Education)</option>
-              <option value="Diploma in Primary Teacher Training">Diploma in Primary Teacher Training</option>
-              <option value="Diploma in Catholic Education and Teacher Training (DCETT)">Diploma in Catholic Education and Teacher Training (DCETT)</option>
-              <option value="Bsc(hons)">Bsc(hons)</option>
-              <option value="others">others</option>
-              <input type="text" name="other" id="other" style='display:none;'/>
+               <select name="Qualification" class="form-control" onchange='CheckColors(this.value);' required>
+                 <option value=" "disabled selected hidden >Select Qualification </option>
+                 <option value="Bachelor of Teaching (Primary Education)">Bachelor of Teaching (Primary Education)</option>
+                 <option value="Diploma in Primary Teacher Training">Diploma in Primary Teacher Training</option>
+                 <option value="Diploma in Catholic Education and Teacher Training (DCETT)">Diploma in Catholic Education and Teacher Training (DCETT)</option>
+                 <option value="Bsc(hons)">Bsc(hons)</option>
+                 <option value="others">others</option>
+                 <input type="text"  name="other" id="other" style='display:none;'/>
               
-           </select>
+                </select>
           
 			<div class="input_field" id="input_field">
-			<label>Description:</label><br>
-			<textarea  name="discription" rows="5" cols="45" class="txtarea" ></textarea>
+			  <label>Description:</label><br>
+			  <textarea  name="discription" rows="5" cols="45" class="txtarea" ></textarea>
 			</div>
 			
 			<br/>
 			
 			
             <div class="btn1">
-			 <input type="submit" name="submit" value="Add Teacher" id="btnsubmit">
+			  <input type="submit" name="submit" value="Add Teacher" id="btnsubmit">
             </div>
        </form>
 </div>       

@@ -22,6 +22,7 @@ public class UpdateTeacherservlet extends HttpServlet {
 		PrintWriter out =response.getWriter();
 		response.setContentType("text/html");
 		
+		//store front end pass value to variable
 		String id=request.getParameter("id");
 		String fullname = request.getParameter("fullname");
 		String adress = request.getParameter("adress");
@@ -36,7 +37,7 @@ public class UpdateTeacherservlet extends HttpServlet {
 		
 		
         boolean istrue;
-		
+		//call function
 		istrue=TeacherDButil.UpdateTeacher(id,fullname,adress,dob,gender,nic,phone,joindate,qulification,status,discrption);
 		
 		

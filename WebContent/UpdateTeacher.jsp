@@ -76,7 +76,7 @@ margin-left: 80px;
 				<img src="css/logo.jpeg" class="user_type" alt="">
 			</center>
 			
-			<a href="Home.jsp"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
+			<a href="index.jsp"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
 			<a href="Addteacher.jsp"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Teacher</span></a>
 			<a href="searchTeacher.jsp"><i class="fa fa-search" aria-hidden="true"></i><span>Search Teacher Details</span></a>
 			<a href="DBrefresh.jsp"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Subject to Teacher</span></a>
@@ -128,18 +128,18 @@ margin-left: 80px;
 		</tr>
 		<tr>
 			<td>NIC</td>
-			<td><input type="text" name="nic" value="<%= nic  %>"   id="td1"></td>
+			<td><input type="text" name="nic" value="<%= nic  %>"   id="td1" pattern="^(?:19|20)?\d{2}[0-9]{10}|[0-9]{9}[x|X|v|V]$"></td>
 		</tr>
 		<tr>
 			<td>Phone</td>
-			<td><input type="text" name="phone" value="<%= phone  %>"   id="td1"></td>
+			<td><input type="text" name="phone" value="<%= phone  %>"   id="td1" pattern="[0-9]{1}[0-9]{9}"></td>
 		</tr>
 		<tr>
 			<td>JoinDate</td>
 			<td><input type="text" name="joindate" value="<%= joindate  %>"   id="td1"> </td>
 		</tr>
 		<tr>
-			<td>Status</td>
+			<td>Qulification</td>
 			<td><label for="assing"></label>
             <select name="qulification" id="td1">
               <option value="<%= qulification  %>"><%= qulification  %></option>

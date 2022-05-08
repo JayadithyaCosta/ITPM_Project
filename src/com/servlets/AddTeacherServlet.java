@@ -22,7 +22,8 @@ public class AddTeacherServlet extends HttpServlet {
 		
 		PrintWriter out =response.getWriter();
 		response.setContentType("text/html");
-	
+	    
+		//store front end pass value to variable
 		String fullname = request.getParameter("Full_name");
 		String adress=request.getParameter("Address");
 		String gender=request.getParameter("Gender");
@@ -32,13 +33,11 @@ public class AddTeacherServlet extends HttpServlet {
 		String joindate=request.getParameter("joindate");
 		String Qualification=request.getParameter("Qualification");
 		String discription=request.getParameter("discription");
-
-
         String Status = "Active";
 		
 		
 		 boolean isTrue;
-			
+			//call insert function
 			isTrue = TeacherDButil.insertteacher(fullname, adress, gender,  dob, nic,phone,joindate,Qualification,discription, Status);
 			
 			if(isTrue == true) {
